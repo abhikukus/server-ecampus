@@ -6,14 +6,14 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser")
 const bcrypt = require("bcrypt")
 const { createTokens, validateToken } = require("./JWT")
+require('dotenv').config()
+
 
 app.use(express.json()); 
 app.use(cors());
 app.use(cookieParser());
 
-mongoose.connect("mongodb+srv://user123:Password123AbhiAmit@cluster0.v6vrw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-
-
+mongoose.connect(process.env.REACT_APP_MONGODB_URL)
 
 app.post("/register",  (req, res) => {
     console.log("registering user...")
