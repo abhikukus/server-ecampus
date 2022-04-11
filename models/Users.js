@@ -11,8 +11,12 @@ const UserSchema = new mongoose.Schema({
         type : String,
         required : true,
     },
+    role : {
+        type : String,
+        required : true,
+    },
 });
 
-const Users = mongoose.model("UserAuthentication", UserSchema);
+const Users = mongoose.model("Users", UserSchema);
 
 module.exports = { Users };
