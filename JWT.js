@@ -1,4 +1,5 @@
-const {sign, verify} = require("jsonwebtoken")
+import pkg from 'jsonwebtoken';
+const { sign, verify } = pkg;
 
 const createTokens = (user) => {
     const accessToken = sign (
@@ -37,4 +38,4 @@ const validateToken = (req, res, next) => {
     }
 }
 
-module.exports = { createTokens, validateToken };
+export { createTokens, validateToken };
